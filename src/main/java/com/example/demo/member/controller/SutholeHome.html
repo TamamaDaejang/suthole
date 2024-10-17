@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Kakao 지도 시작하기</title>
+</head>
+<style>
+  #map {
+     width: 75vw; /* 페이지 가로의 3/4 */
+     height: 100vh; /* 전체 페이지 높이 */
+     float: right;
+
+ }
+
+  .container {
+     width: 45vw;
+     padding: 20px;
+ }
+</style>
+
+
+<body>
+<div id="map"></div>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e74a77a16713ffd9783ba7670873e855"></script>
+<script>
+  var container = document.getElementById('map');
+  var options = {
+      center: new kakao.maps.LatLng(37.2087390422946, 126.976038597658539),
+      level: 3
+  };
+
+
+  var map = new kakao.maps.Map(container, options);
+  const REST_API_KEY = 'a24daf2bfe99fbef3e2963fc8d8abbdb';
+
+
+</script>
+
+<div style="text-align: reft; width: 45vw;">
+  <img alt="" src="sutholeLogo.jpg" width="50%">
+  <div class="container">
+    <h2>길찾기</h2>
+    <label for="start">출발지: </label>
+    <input type="text" id="start" placeholder="출발지 입력">
+    <br><br>
+    <label for="end">도착지: </label>
+    <input type="text" id="end" placeholder="도착지 입력">
+    <br><br>
+    <button onclick="findRoute()">길찾기</button>
+    <br><br>
+    <img alt="" src="sutholeLogo.jpg" width="50%">
+  </div>
+
+</body>
+</html>
